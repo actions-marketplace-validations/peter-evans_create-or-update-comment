@@ -18,7 +18,7 @@ jobs:
           echo "branch=$branch" >> $GITHUB_OUTPUT
 
       # Checkout the branch to test
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           repository: ${{ steps.vars.outputs.repository }}
           ref: ${{ steps.vars.outputs.branch }}
@@ -64,7 +64,7 @@ jobs:
       # Test create from template
       - name: Render template
         id: template
-        uses: chuhlomin/render-template@v1.10
+        uses: chuhlomin/render-template@v1.12
         with:
           template: .github/comment-template.md
           vars: |
